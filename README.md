@@ -1,8 +1,8 @@
 # A Real Estate Management Mobile Application.
 
-Name: Ikeola Emmanuel__
-Student Number: 3002435__
-Project Name: A Real Estate Management Mobile Application.
+- Name: Ikeola Emmanuel
+- Student Number: 3002435
+- Project Name: A Real Estate Management Mobile Application.
 
 ## Installation
 
