@@ -1,0 +1,125 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    ion-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    ion-tab-bar {
+        margin-bottom: 5px !important;
+        border-radius: 10px !important;
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+    ion-list-header{
+        display:block;
+        text-align: center !important;
+        font-size: 23px;
+   }
+   .action-sheet-group.sc-ion-action-sheet-md:first-child {
+    padding-top: 0;
+    border-top: 1px white solid;
+   }
+   .sc-ion-action-sheet-md-h {
+    --background: var(--ion-overlay-background-color, var(--ion-background-color, #fff));
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.8);
+   }
+   .action-sheet-group.sc-ion-action-sheet-md:last-child {
+    padding-bottom: 0;
+    border-top: 1px white solid;
+}
+.sc-ion-popover-md-h {
+    --width: 250px;
+    --max-height: 90%;
+    --box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.8);
+}
+
+.item-input.sc-ion-label-md-h, .item-input .sc-ion-label-md-h {
+    -ms-flex: initial;
+    flex: initial;
+    max-width: 200px;
+    pointer-events: none;
+    border-right: 1px dotted;
+    padding-right: 5px;
+}
+
+.sc-ion-alert-md-h {
+    --background: var(--ion-overlay-background-color, var(--ion-background-color, #fff));
+    --max-width: 280px;
+    --backdrop-opacity: var(--ion-backdrop-opacity, 0.78);
+    font-size: 14px;
+}
+
+
+
+
+}
+
+.centerize {
+    text-align: center;
+}
+
+.t-r {
+    text-align: right;
+}
+
+.avatar-center {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.m-b {
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
+  }
+  
+  .status {
+    border: 1px solid;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: green;
+}
+
+.m-t-3 {
+    margin-top: 30px;
+}
+
+.tile {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}

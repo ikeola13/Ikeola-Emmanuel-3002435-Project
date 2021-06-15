@@ -1,0 +1,37 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>pair</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="m-t-3">
+    <ion-title>Pairings</ion-title>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="newPair()" *ngIf="addPair">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let p of pairs; let i = index">
+          <ion-card-header>
+            <ion-card-subtitle>Pairing</ion-card-subtitle>
+            <ion-card-title>{{ p.pairing_name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-chip *ngFor="let user of p.users" (click)="displayPair(user.uid)">
+              <ion-label>{{ user.name }}</ion-label>
+            </ion-chip>
+            <ion-button shape="round" fill="outline" class="ion-float-right" *ngIf="joinPair" (click)="joinExistingPair(i, p.created_by, p.pairing_name, p.users)">
+              Join
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

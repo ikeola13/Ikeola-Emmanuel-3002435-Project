@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="arrow-back-circle-outline" size="large" (click)="back()"></ion-icon>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-list-header>
+      All Pairings
+    </ion-list-header>
+
+      <ion-card *ngFor="let p of pairs">
+        <ion-card-header>
+          <ion-card-subtitle>Pairing</ion-card-subtitle>
+          <ion-card-title>{{ p.pairing_name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-chip *ngFor="let user of p.users">
+            <ion-label>{{ user.name }}</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+    
+  </ion-list>
+  </ion-content>

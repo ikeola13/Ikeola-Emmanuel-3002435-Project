@@ -1,0 +1,81 @@
+<ion-content>
+  <div class="m-t-3">
+    <ion-title>Search Filters</ion-title>
+  </div>
+
+  <form [formGroup]="listingForm" (ngSubmit)="done()">
+  <ion-item>
+    <ion-label>Location</ion-label>
+    <ion-select placeholder="Select One" interface="action-sheet" formControlName="location">
+      <ion-select-option value="Belfast City">Belfast City</ion-select-option>
+      <ion-select-option value="Cork City">Cork City</ion-select-option>
+      <ion-select-option value="Dublin City">Dublin City</ion-select-option>
+      <ion-select-option value="Galway City">Galway City</ion-select-option>
+      <ion-select-option value="Limerick City">Limerick City</ion-select-option>
+      <ion-select-option value="Waterford City">Waterford City</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Minimum Price</ion-label>
+    <ion-input class="text" type="number" formControlName="min_price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Maximum Price</ion-label>
+    <ion-input class="text" type="number" formControlName="max_price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Price Rate</ion-label>
+    <ion-select placeholder="Select One" interface="action-sheet" formControlName="price_rate">
+      <ion-select-option value="week">Week</ion-select-option>
+      <ion-select-option value="month">Month</ion-select-option>
+      <ion-select-option value="year">Year</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Type</ion-label>
+    <ion-select placeholder="Select One" interface="action-sheet" formControlName="type">
+      <ion-select-option value="apartment">Apartment</ion-select-option>
+      <ion-select-option value="bungalow">Bungalow</ion-select-option>
+      <ion-select-option value="cabin">Cabin</ion-select-option>
+      <ion-select-option value="castle">Castle</ion-select-option>
+      <ion-select-option value="detached">Detached</ion-select-option>
+      <ion-select-option value="manor">Manor</ion-select-option>
+      <ion-select-option value="villa">Villa</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bedrooms</ion-label>
+    <ion-input class="text" type="number" formControlName="bedrooms"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Bathrooms</ion-label>
+    <ion-input class="text" type="number" formControlName="bathrooms"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Furnished</ion-label>
+    <ion-select placeholder="Select One" interface="action-sheet" formControlName="furnished">
+      <ion-select-option value="yes">Yes</ion-select-option>
+      <ion-select-option value="no">No</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Status</ion-label>
+    <ion-select placeholder="Select One" interface="action-sheet" formControlName="status">
+      <ion-select-option value="FOR SALE">FOR SALE</ion-select-option>
+      <ion-select-option value="FOR RENT">FOR RENT</ion-select-option>
+      <ion-select-option value="LET AGREED">LET AGREED</ion-select-option>
+      <ion-select-option value="SALE AGREED">SALE AGREED</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" type="submit" >Done</ion-button>
+  </form>
+</ion-content>

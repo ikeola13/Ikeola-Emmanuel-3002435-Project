@@ -1,0 +1,116 @@
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="userType === 'user'" (click)="email(this.listingData.agent_id)">
+    <ion-fab-button>
+      <ion-icon name="mail-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="userType === 'user'" (click)="openMap()">
+    <ion-fab-button>
+      <ion-icon name="navigate"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="userType === 'agent'" (click)="editListing()">
+    <ion-fab-button>
+      <ion-icon name="pencil-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-grid> 
+    <ion-row>
+      <ion-col>
+        <ion-icon name="arrow-back-circle-outline" size="large" (click)="back()"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="share-outline" size="large" class="ion-float-right" (click)="openActionSheet()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div>
+    <ion-slides [options]="slideOptsOne" #slideWithNav (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+      <ion-slide *ngFor="let s of sliderOne.slidesItems; let i = index">
+        <img [src]="s.url">
+        <span class="slide-text">{{i + 1}}/{{sliderOne.slidesItems.length}}</span>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="details">
+    <div class="price">
+      {{ this.listingData.price | currency:'EUR':'symbol':'4.2-2' }} per {{ this.listingData.price_rate }}
+    </div>
+    <div class="status">
+      {{ this.listingData.status }}
+    </div>
+    <div class="address">
+      {{ this.listingData.address }}
+    </div>
+    <div class="des">
+      <ul>
+        <li>{{ this.listingData.bedrooms }} Bed</li>
+        <li>{{ this.listingData.bathrooms }} Bath</li>
+        <li>{{ this.listingData.type | titlecase }}</li>
+      </ul>
+    </div>
+
+    <ion-list class="feats">
+      <ion-item>
+        <ion-label>Bedroom</ion-label>
+        <ion-label slot="end" class="t-r">{{ this.listingData.bedrooms }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Bathroom</ion-label>
+        <ion-label slot="end" class="t-r">{{ this.listingData.bathrooms }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Available</ion-label>
+        <ion-label slot="end" class="t-r">From {{ this.month }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Furnished</ion-label>
+        <ion-label slot="end" class="t-r">{{ this.listingData.furnished }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lease</ion-label>
+        <ion-label slot="end" class="t-r" *ngIf="listingData.lease === '1'">Minimum {{ this.listingData.lease }} Year</ion-label>
+        <ion-label slot="end" class="t-r" *ngIf="listingData.lease !== '1'">Minimum {{ this.listingData.lease }} Years</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-card class="ion-card-custom">
+    <ion-card-header>
+      <ion-card-subtitle>Property Description</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div>
+        {{ this.listingData.description }}
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-card-custom">
+    <ion-card-header>
+      <ion-card-subtitle>Property Facilities</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div>
+        {{ this.listingData.property_facilities }}
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-list class="m-b-30">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img [src]="this.agentData.profile_picture" onerror="this.src='assets/images/avatar.svg'">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ this.agentData.firstname }} {{ this.agentData.lastname }}</h2>
+        <h3>{{ this.agentData.company_name }}</h3>
+        <p>PSR License Number: {{ this.agentData.license_number }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

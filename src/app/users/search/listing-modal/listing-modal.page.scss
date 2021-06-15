@@ -1,0 +1,86 @@
+// Slider Style START
+.custon-nav{
+    height: 48px;
+    width: 20px;
+    cursor: pointer;
+
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .prev-icon-custom{
+    background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll 0px 0px;
+  }
+  .prev-icon-custom.disabled{
+    opacity: 0.4;
+    cursor: default;
+  }
+  .next-icon-custom{
+    background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll -32px 0px;
+  }
+  .next-icon-custom.disabled{
+    opacity: 0.4;
+    cursor: default;
+  }
+  .slider-nav{
+    ion-icon{
+        height: 100%;
+    }
+  }
+
+  .slide-text{
+    position: absolute;
+    color: white;
+    bottom: 10px;
+    background: black;
+    width: 100%;
+    opacity: .4;
+  }
+
+  // Slider Style STOP
+  .des ul {
+    // list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .des li {
+    float: left;
+    display: block;
+    color: gray;
+    text-align: center;
+    padding: 5px 20px 5px 0;
+  }
+
+  .details {
+padding: 20px;
+  }
+  .price {
+font-size: 24px;
+text-align: center;
+  }
+
+  .address {
+    padding: 5px 0 5px 0;
+  }
+
+  .feats {
+   margin: 15px 0 15px 0;
+  }
+
+  .read {
+    color: var(--ion-color-primary);
+    padding-top: 3px;
+    text-align: right;
+}
+
+    .ion-card-custom {
+        margin: 0px 20px 20px 20px !important;
+    }
+
+
+    .m-b-30 {
+        margin-bottom: 80px;
+    }

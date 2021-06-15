@@ -1,0 +1,86 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="greet">
+    <ion-chip>
+      <ion-avatar>
+        <img [src]="picture" onerror="this.src='assets/images/avatar.svg'">
+      </ion-avatar>
+      <ion-label>{{ user }}</ion-label>
+    </ion-chip>
+  </div>
+  <div class="gt">
+    Find Your Perfect Property!
+  </div>
+
+  <div class="tiles">
+    <ion-grid>
+      <ion-row>
+        <ion-col routerLink="../../users/search" routerDirection="forward">
+          <div class="tile">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="search-circle-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Find Property
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+        <ion-col routerLink="../../users/pair" routerDirection="forward">
+          <div class="tile">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="people-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Join Pairing
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col routerLink="../../users/profile" routerDirection="forward">
+            <div class="tile">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-icon name="create-outline" style="font-size: 35px;"></ion-icon>
+                  </ion-col>
+                  <ion-col>
+                    Edit Profile
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-col>
+          <ion-col routerLink="../../users/profile" routerDirection="forward">
+            <div class="tile">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-icon name="briefcase-outline" style="font-size: 35px;"></ion-icon>
+                  </ion-col>
+                  <ion-col>
+                    Manage Tenancy
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+</ion-content>

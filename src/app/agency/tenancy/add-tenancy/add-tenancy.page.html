@@ -1,0 +1,78 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="arrow-back-circle-outline" size="large" (click)="back()"></ion-icon>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-title>Add a New Tenancy Agreement</ion-title>
+  <form [formGroup]="tenancyForm" (ngSubmit)="addTenancy()">
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="person-outline"></ion-icon> Select User
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" (ionChange)="user($event)">
+        <ion-select-option *ngFor="let user of users" value="{{ user.uid }}"> {{ user.email }} </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="pricetags-outline"></ion-icon> Select Listing
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" (ionChange)="list($event)">
+        <ion-select-option *ngFor="let list of listings; let i = index" value="{{ i }}"> {{ list.address }} </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="calendar-outline"></ion-icon> Start Date
+      </ion-label>
+      <ion-input class="text" type="Date" formControlName="start_date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="calendar-outline"></ion-icon> End Date
+      </ion-label>
+      <ion-input class="text" type="Date" formControlName="end_date"></ion-input>
+    </ion-item> 
+
+    <div class="add-images">
+      <div class="centerize m-b">
+        <ion-button (click)="file.click()">Add Documents</ion-button>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" (change)="upload(file.files)" #file class="hide">
+      </div>
+      <ion-grid *ngFor="let d of images; let i = index">
+        <ion-row>
+          <ion-col class="right">
+            <img [src]="d.url" width="50px">
+          </ion-col>
+          <ion-col>
+            {{ d.name }}
+          </ion-col>
+          <ion-col>
+            <ion-icon name="trash-outline" style="font-size: large;" (click)="remove(d.url, i)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-button shape="round" fill="outline" class="m-t-20 ion-" type="submit">
+            Submit</ion-button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+</ion-content>

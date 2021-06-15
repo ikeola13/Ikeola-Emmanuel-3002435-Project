@@ -1,0 +1,23 @@
+<ion-content>
+
+  <ion-card>
+    <img [src]="dat.profile_picture" onerror="this.src='assets/images/avatar.svg'" />
+    <ion-card-header>
+      <ion-card-title>{{ dat.firstname }} {{ dat.lastname }}</ion-card-title>
+      <ion-card-subtitle>Occupation: {{ dat.occupation }}</ion-card-subtitle>
+      <ion-card-subtitle>Date of Birth : {{ dat.dateOfBirth }}</ion-card-subtitle>
+      <ion-card-subtitle>Email : {{ dat.email }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Interests: {{ dat.interests }}
+    </ion-card-content>
+  </ion-card>
+  <div class="ion-text-center ion-padding-bottom">
+
+    <ion-chip (click)="back()">
+      <ion-label>Close</ion-label>
+      <ion-icon name="close-circle"></ion-icon>
+    </ion-chip>
+  </div>
+
+</ion-content>

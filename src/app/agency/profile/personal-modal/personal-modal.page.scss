@@ -1,0 +1,22 @@
+.item-avatar {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100px !important; //any size
+    max-height: 100px !important; //any size
+  }
+
+  .icon {
+    display: inline-block;
+    font-size: 20px;
+    color: #ffc977;
+    vertical-align: middle;
+  }
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .hide {
+    display: none;
+  }

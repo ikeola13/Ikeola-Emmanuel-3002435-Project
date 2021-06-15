@@ -1,0 +1,86 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="greet">
+    <ion-chip>
+      <ion-avatar>
+        <img [src]="picture" onerror="this.src='assets/images/avatar.svg'">
+      </ion-avatar>
+      <ion-label>{{ user }}</ion-label>
+    </ion-chip>
+  </div>
+  <div class="gt">
+    Manage Your Properties!
+  </div>
+
+  <div class="tiles">
+    <ion-grid>
+      <ion-row>
+        <ion-col routerLink="../../agency/listings" routerDirection="forward">
+          <div class="tile">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="home-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Listings
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+        <ion-col routerLink="../../agency/tenancy" routerDirection="forward">
+          <div class="tile">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="list-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Tenancy
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col routerLink="../../agency/profile" routerDirection="forward">
+            <div class="tile">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-icon name="create-outline" style="font-size: 35px;"></ion-icon>
+                  </ion-col>
+                  <ion-col>
+                    Edit Profile
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-col>
+          <ion-col routerLink="../../agency/profile" routerDirection="forward">
+            <div class="tile">
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-icon name="log-out-outline" style="font-size: 35px;"></ion-icon>
+                  </ion-col>
+                  <ion-col>
+                    Log Out
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+</ion-content>

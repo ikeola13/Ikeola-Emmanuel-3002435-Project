@@ -1,0 +1,155 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="arrow-back-circle-outline" size="large" (click)="back()"></ion-icon>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-title>Add a New Listing</ion-title>
+  <form [formGroup]="listingForm" (ngSubmit)="addListing()">
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="location-outline"></ion-icon>Address
+      </ion-label>
+      <ion-textarea rows="6" class="text" type="text" formControlName="address"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="pin-outline"></ion-icon> Location
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" formControlName="location">
+        <ion-select-option value="Belfast City">Belfast City</ion-select-option>
+        <ion-select-option value="Cork City">Cork City</ion-select-option>
+        <ion-select-option value="Dublin City">Dublin City</ion-select-option>
+        <ion-select-option value="Galway City">Galway City</ion-select-option>
+        <ion-select-option value="Limerick City">Limerick City</ion-select-option>
+        <ion-select-option value="Waterford City">Waterford City</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="pricetag-outline"></ion-icon> Price
+      </ion-label>
+      <ion-input class="text" type="number" formControlName="price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="pricetags-outline"></ion-icon> Price Rate
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" formControlName="price_rate">
+        <ion-select-option value="week">Week</ion-select-option>
+        <ion-select-option value="month">Month</ion-select-option>
+        <ion-select-option value="year">Year</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="reader-outline"></ion-icon> Type
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" formControlName="type">
+        <ion-select-option value="apartment">Apartment</ion-select-option>
+        <ion-select-option value="bungalow">Bungalow</ion-select-option>
+        <ion-select-option value="cabin">Cabin</ion-select-option>
+        <ion-select-option value="castle">Castle</ion-select-option>
+        <ion-select-option value="detached">Detached</ion-select-option>
+        <ion-select-option value="manor">Manor</ion-select-option>
+        <ion-select-option value="villa">Villa</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="bed-outline"></ion-icon> No of Bedrooms
+      </ion-label>
+      <ion-input class="text" type="number" formControlName="bedrooms"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="rainy-outline"></ion-icon> No of Bathrooms
+      </ion-label>
+      <ion-input class="text" type="number" formControlName="bathrooms"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="file-tray-full-outline"></ion-icon> Furnished
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" formControlName="furnished">
+        <ion-select-option value="yes">Yes</ion-select-option>
+        <ion-select-option value="no">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="stats-chart-outline"></ion-icon> Status
+      </ion-label>
+      <ion-select placeholder="Select One" interface="action-sheet" formControlName="status">
+        <ion-select-option value="FOR SALE">FOR SALE</ion-select-option>
+        <ion-select-option value="FOR RENT">FOR RENT</ion-select-option>
+        <ion-select-option value="LET AGREED">LET AGREED</ion-select-option>
+        <ion-select-option value="SALE AGREED">SALE AGREED</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="person-outline"></ion-icon> Lease
+      </ion-label>
+      <ion-input class="text" type="number" formControlName="lease"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="albums-outline"></ion-icon> Description
+      </ion-label>
+      <ion-textarea rows="6" class="text" type="text" formControlName="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="newspaper-outline"></ion-icon> Property Facilities
+      </ion-label>
+      <ion-textarea rows="6" class="text" type="text" formControlName="property_facilities"></ion-textarea>
+    </ion-item>
+    <ion-item class="m-b">
+      <ion-label>
+        <ion-icon class="icon" name="calendar-number-outline"></ion-icon> Available from
+      </ion-label>
+      <ion-datetime displayFormat="MMMM" formControlName="available_from"></ion-datetime>
+    </ion-item>
+
+    <div class="add-images">
+      <div class="centerize m-b">
+        <ion-button (click)="file.click()">Add Image</ion-button>
+        <input type="file" accept="image/*" (change)="upload(file.files)" #file class="hide">
+      </div>
+      <ion-grid *ngFor="let d of images; let i = index">
+        <ion-row>
+          <ion-col class="right">
+            <img [src]="d.url" width="50px">
+          </ion-col>
+          <ion-col>
+            {{ d.name }}
+          </ion-col>
+          <ion-col>
+            <ion-icon name="trash-outline" style="font-size: large;" (click)="remove(d.url, i)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-button shape="round" fill="outline" class="m-t-20 ion-" type="submit" [disabled]="!listingForm.valid">
+              Submit</ion-button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+</ion-content>

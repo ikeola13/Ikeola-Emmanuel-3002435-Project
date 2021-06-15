@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+
+  <ion-toolbar>
+  <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+          <ion-searchbar placeholder="Search Properties.." (change)="search($event)"></ion-searchbar>
+        </ion-col>
+        <ion-col class="pd">
+          <ion-icon name="filter-circle-outline" size="large" class="ion-float-center" (click)="filterModal()"></ion-icon>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  </ion-toolbar>
+
+  <div>
+    <ion-card class="mt" *ngFor="let list of listings; let i = index" (click)="listingModal(i, list.address)">
+      <img [src]='list.pictures[0].url' />
+      <ion-card-header>
+        <ion-grid class="padding-0">
+          <ion-row>
+            <ion-col size="9">
+              <ion-card-subtitle>{{ list.location | titlecase }}</ion-card-subtitle>
+              <ion-card-title>{{ list.price | currency:'EUR':'symbol':'4.2-2'}}</ion-card-title>
+              <ion-card-subtitle>{{ list.bedrooms }} Beds / {{ list.bathrooms }} Baths / {{ list.type | titlecase }}
+              </ion-card-subtitle>
+              <ion-card-subtitle class="status">{{ list.status }}
+              </ion-card-subtitle>
+            </ion-col>
+            <ion-col>
+              <!-- <ion-icon name="heart" class="ion-float-right" size="large"></ion-icon> -->
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+      <ion-card-content>
+        {{ list.address | titlecase }}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

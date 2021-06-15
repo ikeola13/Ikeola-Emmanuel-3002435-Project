@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="top">
+    <ion-avatar class="avatar">
+      <img [src]="profilePicture" onerror="this.src='assets/images/avatar.svg'">
+    </ion-avatar>
+    <div>
+      Hi Agent!
+    </div>
+  </div>
+
+  <div>
+    <ion-card>
+      <ion-item class="ion-activated" (click)="editProfileModal()">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label>Personal Details</ion-label>
+      </ion-item>
+
+      <!-- <ion-item class="ion-activated" (click)="messages()">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-label>Messages</ion-label>
+      </ion-item> -->
+
+      <ion-item (click)="about()">
+        <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-item>
+
+      <ion-item (click)="version()">
+        <ion-icon name="hammer-outline" slot="start"></ion-icon>
+        <ion-label>Version</ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+
+
+  <!-- fab placed to the bottom end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="logout()">
+    <ion-fab-button color="danger">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

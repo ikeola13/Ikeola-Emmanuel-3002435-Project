@@ -1,0 +1,83 @@
+<ion-header>
+  <!-- <ion-toolbar>
+    <ion-title>auth</ion-title>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-icon name="home-outline"></ion-icon> Real Estate
+  </div>
+
+  <ion-segment [(ngModel)]="links" (ionChange)="segmentChanged($event)" class="tab">
+    <ion-segment-button value="register">
+      <ion-label>Sign Up</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="login">
+      <ion-label>Log In</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-card *ngIf="authTab">
+    <ion-card-header>
+      <ion-card-title class="form-title">Sign Up</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="reg" (ngSubmit)="regForm()">
+        <ion-item>
+          <ion-label>
+            <ion-icon class="icon" name="mail-outline"></ion-icon> Email
+          </ion-label>
+          <ion-input class="text" type="Email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon class="icon" name="lock-closed-outline"></ion-icon> Password
+          </ion-label>
+          <ion-input class="text" type="Password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon class="icon" name="lock-closed-outline"></ion-icon> User Type
+          </ion-label>
+          <ion-select placeholder="Select One" interface="action-sheet" formControlName="user_type">
+            <ion-select-option value="agent">Agent</ion-select-option>
+            <ion-select-option value="user">Renter/Buyer</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-button expand="full" shape="round" fill="outline" class="m-t-20" type="submit" [disabled]="!reg.valid">
+          Submit</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="!authTab">
+    <ion-card-header>
+      <ion-card-title class="form-title">Log In</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form [formGroup]="login" (ngSubmit)="logForm()">
+        <ion-item>
+          <ion-label>
+            <ion-icon class="icon" name="mail-outline"></ion-icon> Email
+          </ion-label>
+          <ion-input type="Email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <ion-icon class="icon" name="lock-closed-outline"></ion-icon> Password
+          </ion-label>
+          <ion-input type="Password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" shape="round" fill="outline" class="m-t-20" type="submit" [disabled]="!login.valid">
+          Submit</ion-button>
+      </form>
+
+      <div class="forgot"><a (click)="forgot()">Forgot Password ?</a></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

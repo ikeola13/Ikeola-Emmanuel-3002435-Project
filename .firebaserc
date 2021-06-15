@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "projecttest-cc6f9": {
+      "hosting": {
+        "app": [
+          "projecttest-cc6f9"
+        ]
+      }
+    }
+  }
+}

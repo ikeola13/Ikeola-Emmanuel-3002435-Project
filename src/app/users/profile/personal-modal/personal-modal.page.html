@@ -1,0 +1,83 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="arrow-back-circle-outline" size="large" (click)="back()"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <!-- <ion-icon name="share-social-outline" size="large" class="ion-float-right"></ion-icon> -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-title>Edit Personal Profile</ion-title>
+
+  <ion-avatar class="avatar avatar-center item-avatar" size="large">
+    <img [src]="profilePicture" >
+  </ion-avatar>
+  <div class="centerize m-b">
+    <ion-button (click)="file.click()">Change Profile Picture</ion-button>
+    <input type="file" accept="image/*" (change)="upload(file.files)" #file class="hide">
+  </div>
+  <form [formGroup]="updateForm" (ngSubmit)="update()">
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="mail-outline"></ion-icon> Email
+      </ion-label>
+      <ion-input class="text" type="Email" formControlName="email" [disabled]></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="person-outline"></ion-icon> First Name
+      </ion-label>
+      <ion-input class="text" type="text" formControlName="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="person-outline"></ion-icon> Last Name
+      </ion-label>
+      <ion-input class="text" type="text" formControlName="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="call-outline"></ion-icon> Phone Number
+      </ion-label>
+      <ion-input class="text" type="Number" formControlName="phoneNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="calendar-outline"></ion-icon> Date of Birth
+      </ion-label>
+      <ion-input class="text" type="Date" formControlName="dateOfBirth"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-icon class="icon" name="walk-outline"></ion-icon> Interests
+      </ion-label>
+      <ion-input class="text" type="text" formControlName="interests"></ion-input>
+    </ion-item>
+    <ion-item class="m-b">
+      <ion-label>
+        <ion-icon class="icon" name="bag-outline"></ion-icon> Occupation
+      </ion-label>
+      <ion-input class="text" type="text" formControlName="occupation"></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-button shape="round" fill="outline" class="m-t-20 ion-" type="submit">
+            Update</ion-button>
+            <!-- <ion-button shape="round" fill="outline" class="m-t-20 ion-" type="submit" [disabled]="!updateForm.valid">
+              Update</ion-button> -->
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </form>
+</ion-content>

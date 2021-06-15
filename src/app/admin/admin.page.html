@@ -1,0 +1,113 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="greet">
+    Hi Admin!
+  </div>
+  <div class="gt">
+    Manage Your Properties!
+  </div>
+
+  <div class="tiles">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="tile" (click)="usersModal()">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="home-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Users
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="tile" (click)="agentsModal()">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="list-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Agents
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="tile" (click)="listingsModal()">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="create-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Listings
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="tile" (click)="pairingsModal()">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="log-out-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Pairings
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="tile" (click)="tenancyModal()">
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="create-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Tenancies
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ion-col>
+        <ion-col>
+          <!-- <div class="tile" >
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-icon name="log-out-outline" style="font-size: 35px;"></ion-icon>
+                </ion-col>
+                <ion-col>
+                  Manage Pairings
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
