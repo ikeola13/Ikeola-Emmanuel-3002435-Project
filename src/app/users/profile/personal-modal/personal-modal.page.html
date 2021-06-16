@@ -13,7 +13,7 @@
   <ion-title>Edit Personal Profile</ion-title>
 
   <ion-avatar class="avatar avatar-center item-avatar" size="large">
-    <img [src]="profilePicture" >
+    <img [src]="profilePicture" onerror="this.src='assets/images/avatar.svg'">
   </ion-avatar>
   <div class="centerize m-b">
     <ion-button (click)="file.click()">Change Profile Picture</ion-button>

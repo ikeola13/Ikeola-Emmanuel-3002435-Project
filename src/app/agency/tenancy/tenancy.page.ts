@@ -47,15 +47,18 @@ export class TenancyPage implements OnInit {
     modal.onDidDismiss()
       .then((data) => {
         console.log(data);
+        this.ngOnInit();
       });
 
     return await modal.present();
   }
 
   getTenancy() {
-    const dt = this.afs.collection('tenancy', ref => ref.where('agent_id', '==', localStorage.getItem('uid')))
+    this.tenancyList = [];
+    this.currentTenancy = [];
+    this.expiredTenancy = [];
+    this.afs.collection('tenancy', ref => ref.where('agent_id', '==', localStorage.getItem('uid')))
       .valueChanges().subscribe((data: any) => {
-        dt.unsubscribe();
         console.log(data);
         this.tenancyList = data;
         for (const x of data) {
